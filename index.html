@@ -25,43 +25,7 @@
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 0 0 60px; }
 
   /* ── BANNER CONFIGURAZIONE ── */
-  #config-banner {
-    background: linear-gradient(135deg, #1a2e1f, #2d5a3d);
-    color: white;
-    padding: 14px 20px;
-    text-align: center;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  #config-banner.ok { background: linear-gradient(135deg, #1a5c38, #2d9e5f); }
-  #config-banner input {
-    padding: 6px 12px;
-    border-radius: 8px;
-    border: none;
-    font-size: 0.8rem;
-    font-family: 'Space Mono', monospace;
-    width: 420px;
-    max-width: 90vw;
-    background: rgba(255,255,255,0.15);
-    color: white;
-    outline: none;
-  }
-  #config-banner input::placeholder { color: rgba(255,255,255,0.5); }
-  #config-banner button {
-    padding: 6px 14px;
-    background: var(--yellow);
-    color: #1a2e1f;
-    border: none;
-    border-radius: 8px;
-    font-weight: 800;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    font-size: 0.82rem;
-  }
+  #config-banner { display: none; }
 
   /* ── HERO ── */
   .hero {
@@ -519,19 +483,7 @@
 <!-- ══════════════════════════════════════════════════════ -->
 <script>
 // ── CONFIG ──
-let SCRIPT_URL = localStorage.getItem('eco_script_url') || '';
-if (SCRIPT_URL) {
-  document.getElementById('scriptUrl').value = SCRIPT_URL;
-  document.getElementById('config-banner').classList.add('ok');
-  document.getElementById('url-status').textContent = '✓ configurato';
-}
-
-function saveUrl() {
-  SCRIPT_URL = document.getElementById('scriptUrl').value.trim();
-  localStorage.setItem('eco_script_url', SCRIPT_URL);
-  document.getElementById('config-banner').classList.add('ok');
-  document.getElementById('url-status').textContent = '✓ configurato';
-}
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4IGElmpzT1wZNh1iGMLy7lBWWpMv72fYNLHCUdhxpTkHqTTAWtG4qPq-kNaLmbziV/exec';
 
 // ── STATE ──
 let answers = {};
